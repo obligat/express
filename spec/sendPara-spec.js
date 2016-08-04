@@ -62,3 +62,14 @@ describe('POST /user', function () {
     })
 });
 
+
+describe('POST /users', function () {
+    it("should get a parameter by json", function (done) {
+        request.post('/user')
+            .send({"name":"wang"})
+            .end(function (err, res) {
+               expect(res.text).toEqual('wang');
+               done();
+            });
+    })
+});

@@ -21,6 +21,11 @@ sendParam.post('/user', function (req, res) {
     res.send(req.get.name);
 });
 
+sendParam.post('/users', function (req, res) {
+    res.send(req.body);
+});
+
+
 sendParam.listen(3000, function () {
     console.log('3000 port ');
 });
