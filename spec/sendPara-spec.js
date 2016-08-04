@@ -29,3 +29,19 @@ describe('POST /user', function () {
     })
 });
 
+describe('POST /user', function () {
+    it("should get a parameter by param", function (done) {
+        request .post('/user')
+            .send({name: "wang"})
+            .expect('wang')
+            .end(function (err, res) {
+                if(err){
+                    done.fail(err);
+                }
+                else {
+                    done();
+                }
+            });
+    })
+});
+
